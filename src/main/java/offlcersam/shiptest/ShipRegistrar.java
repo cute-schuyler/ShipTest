@@ -27,8 +27,8 @@ public final class ShipRegistrar {
 
         WeaponTurretPlacement arrowheadLayout = new WeaponTurretPlacement();
 
-        arrowheadLayout.addSlot(-66.0, 21.0);
-        arrowheadLayout.addSlot(66.0, 21.0);
+        arrowheadLayout.addSlot(-55.0, 16.0);
+        arrowheadLayout.addSlot(55.0, 16.0);
         ARROWHEAD_CUSTOM_LAYOUT_ID = WeaponSlotLayoutList.layouts.add(arrowheadLayout);
 
         float cargoMod = 0.75F;
@@ -44,7 +44,7 @@ public final class ShipRegistrar {
                 0,
                 TypeTag.UNCOMMON,
                 ARROWHEAD_RENDER_INDEX,
-                45,              // Engine glow in pixels
+                27,              // Engine glow in pixels
                 integ * 1.50F,                   // Hull HP 200 x 1.5 = 300
                 carg * 1.10F,                    // Cargo 75 * 1.10 = 61.87
                 ARROWHEAD_CUSTOM_LAYOUT_ID,      // Custom Layout
