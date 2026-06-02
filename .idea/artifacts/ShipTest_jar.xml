@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="ShipTest:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ShipTest_jar</output-path>
+    <root id="archive" name="ShipTest.jar">
+      <element id="module-output" name="ShipTest" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/fabric.mod.json" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/shiptest.mixins.json" />
+    </root>
+  </artifact>
+</component>

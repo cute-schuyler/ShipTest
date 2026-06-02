@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "offlcersam_shiptest",
+  "version": "1.0.0",
+  "name": "ShipTest",
+  "description": "Sector Space Ship mod.",
+  "environment": "*",
+
+  "mixins": [
+    "shiptest.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "java": ">=25"
+  }
+}
