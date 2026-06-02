@@ -58,6 +58,6 @@ public final class ShipRegistrar {
 
 
         ShipList.loadShipStatsFromItems(_database.ItemDatabase.itemDataFile);
-        ModLogger.log("[ShipTest] Registered ship: Arrowhead.");
+        ModLogger.log("[ShipTest] Registered ship: Arrowhead with ID of: " + ARROWHEAD_ID);
     }
 }

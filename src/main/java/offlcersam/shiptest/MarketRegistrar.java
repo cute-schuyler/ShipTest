@@ -41,7 +41,7 @@ public final class MarketRegistrar {
                 }
             }
         }
-        ModLogger.log("[ShipTest] Arrowhead added to " + updatedMarkets);
+        ModLogger.log("[ShipTest] Arrowhead added to " + updatedMarkets + " markets");
     }
 
     @SuppressWarnings("unchecked")
