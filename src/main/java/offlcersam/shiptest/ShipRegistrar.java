@@ -27,8 +27,8 @@ public final class ShipRegistrar {
 
         WeaponTurretPlacement arrowheadLayout = new WeaponTurretPlacement();
 
-        arrowheadLayout.addSlot(-55.0, 16.0);
-        arrowheadLayout.addSlot(55.0, 16.0);
+        arrowheadLayout.addSlot(-37.0, 14.5);
+        arrowheadLayout.addSlot(37.0, 14.5);
         ARROWHEAD_CUSTOM_LAYOUT_ID = WeaponSlotLayoutList.layouts.add(arrowheadLayout);
 
         float cargoMod = 0.75F;
@@ -40,11 +40,11 @@ public final class ShipRegistrar {
                 30,
                 Color.AZURE,
                 "Arrowhead",
-                "A militarized shuttlecraft in the shape of an arrowhead.",
+                "A militarized shuttlecraft with a pointed frontend, maybe one day you could be a real arrow.",
                 0,
                 TypeTag.UNCOMMON,
                 ARROWHEAD_RENDER_INDEX,
-                27,              // Engine glow in pixels
+                37,              // Engine glow in pixels
                 integ * 1.50F,                   // Hull HP 200 x 1.5 = 300
                 carg * 1.10F,                    // Cargo 75 * 1.10 = 61.87
                 ARROWHEAD_CUSTOM_LAYOUT_ID,      // Custom Layout
