@@ -20,7 +20,7 @@ public final class DebugItemGrant {
             return;
         }
         if (Player.ship == null || Player.ship.cargo == null) {
-            ModLogger.log("[ShipTest] Could not grant Arrowhead: player cargo is not loaded.");
+            ModLogger.log("[ShipTest] Could not grant Ships: player cargo is not loaded.");
             return;
         }
         /*
@@ -33,6 +33,6 @@ public final class DebugItemGrant {
         Player.ship.cargo.add(ARROWHEAD_ITEM_ID, 1);
         Player.ship.cargo.add(FOUNDRY_ITEM_ID, 1);
         Player.ship.cargo.add(FOUNDRY_PLUS_ITEM_ID, 1);
-        ModLogger.log("[ShipTest] Granted Arrowhead to STEST cargo hold successfully.");
+        ModLogger.log("[ShipTest] Granted Ships to STEST cargo hold successfully.");
     }
 }

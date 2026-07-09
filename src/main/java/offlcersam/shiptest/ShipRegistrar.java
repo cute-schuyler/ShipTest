@@ -43,7 +43,7 @@ public final class ShipRegistrar {
                 37,              // Engine Position glow in pixels
                 integ * 1.50F,                   // Hull HP
                 carg * 1.10F,                    // Cargo
-                WeaponSlotLayoutList.S_2_V,      // Custom Layout
+                WeaponSlotLayoutList.S_2_V,      // Weapon Layout
                 2,                               // Energy slots
                 1,                               // Armor slots
                 1,                               // Shield slots
@@ -53,7 +53,7 @@ public final class ShipRegistrar {
         );
 
         float integ2 = 200;
-        float carg2 = 350.0F * cargoMod;
+        float carg2 = 350.0F * cargoMod * 2.0F;
 
         ShipList.write(
                 FOUNDRY_ID,
@@ -64,14 +64,14 @@ public final class ShipRegistrar {
                 4,
                 TypeTag.RARE,
                 FOUNDRY_RENDER_INDEX,
-                64,              // Engine Position glow in pixels
-                integ2 * 1.20F,                   // Hull HP
-                carg2 * 1.25F,                    // Cargo
-                WeaponSlotLayoutList.S_6_V,      // 6 Layout
+                64,             // Engine Position glow in pixels
+                integ2 * 1.20F,                  // Hull HP
+                carg2 * 1.3F,                   // Cargo
+                WeaponSlotLayoutList.S_6_V,      // Weapon Layout
                 6,                               // Energy slots
                 5,                               // Armor slots
                 4,                               // Shield slots
-                3,                               // Device slots
+                2,                               // Device slots
                 5,                               // Module slots
                 4                                // Engine slots
         );
@@ -79,7 +79,7 @@ public final class ShipRegistrar {
         ShipList.write(
                 FOUNDRY_PLUS_ID,
                 216,
-                Color.WHITE,
+                Color.PURPLE,
                 "Foundry+",
                 "Build an even bigger megastructure+.",
                 5,
@@ -87,8 +87,8 @@ public final class ShipRegistrar {
                 FOUNDRY_RENDER_INDEX,
                 64,              // Engine Position glow in pixels
                 integ2 * 1.5F,                   // Hull HP
-                carg2 * 1.3F,                    // Cargo
-                WeaponSlotLayoutList.S_7_V,      // 6 Layout
+                carg2 * 1.5F,                    // Cargo
+                WeaponSlotLayoutList.S_7_V,      // Weapon Layout
                 6,                               // Energy slots
                 6,                               // Armor slots
                 5,                               // Shield slots
