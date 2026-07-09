@@ -12,6 +12,6 @@ public class PlayerMixin {
 
     @Inject(method = "loadPlayer", at = @At("TAIL"))
     private static void shiptest$grantDebugShip(String name, String saveFileName, CallbackInfo ci) {
-        DebugItemGrant.grantArrowheadToDebugCharacter();
+        DebugItemGrant.grantShipsToDebugCharacter();
     }
 }

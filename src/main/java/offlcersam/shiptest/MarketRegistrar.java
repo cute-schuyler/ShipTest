@@ -9,7 +9,17 @@ import mods.ModLogger;
 import java.lang.reflect.Field;
 
 public final class MarketRegistrar {
+    // Too lazy to make it work for tiers lol
     public static final int ARROWHEAD_ITEM_ID = 100000 + ShipRegistrar.ARROWHEAD_ID;
+    public static final int FOUNDRY_ITEM_ID = 100000 + ShipRegistrar.FOUNDRY_ID;
+    public static final int FOUNDRY_PLUS_ITEM_ID = 100000 + ShipRegistrar.FOUNDRY_PLUS_ID;
+    private static final int[] SHIP_ITEM_IDS = {
+            ARROWHEAD_ITEM_ID,
+            FOUNDRY_ITEM_ID,
+            FOUNDRY_PLUS_ITEM_ID
+    };
+
+
     private static boolean registered;
 
     private MarketRegistrar() { }
@@ -27,21 +37,23 @@ public final class MarketRegistrar {
                 if (market == null) { continue; }
 
                 if (market.stationMatches(501) || market.stationMatches(511)) {
-
-                    MarketItem arrowheadListing = new MarketItem(ARROWHEAD_ITEM_ID, MarketItem.BUY_AND_SELL_ALWAYS);
-
-                    if (arrowheadListing.item != null) {
-                        Item.markAsMarketItem(arrowheadListing.item);
+                    for (int itemId : SHIP_ITEM_IDS) {
+                        MarketItem listing = new MarketItem(
+                                itemId,
+                                MarketItem.BUY_AND_SELL_ALWAYS
+                        );
+                        if (listing.item != null) {
+                            Item.markAsMarketItem(listing.item);
+                        }
+                        market.addChecked(listing);
                     }
-
-                    market.addChecked(arrowheadListing);
 
                     MarketDatabase.setMarket(marketIndex, market);
                     updatedMarkets++;
                 }
             }
         }
-        ModLogger.log("[ShipTest] Arrowhead added to " + updatedMarkets + " markets");
+        ModLogger.log("[ShipTest] Added " + SHIP_ITEM_IDS.length + " custom ship listings to " + updatedMarkets + " markets");
     }
 
     @SuppressWarnings("unchecked")
