@@ -16,15 +16,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
             // Mimic the giant case switch in ShipList
             if (shipIndex == ShipRegistrar.FOUNDRY_ID) {
-                Stat.ENERGY_BANK.percentVal(120.0F);
-                Stat.ENERGY_REGEN.percentVal(85.0F);
+                Stat.ENERGY_BANK.percentVal(140.0F);
+                Stat.ENERGY_REGEN.percentVal(90.0F);
                 Stat.STATION_SLOT.flatVal(5.0F);
                 Stat.PLATFORM_SLOT.flatVal(1.0F);
             }
 
             if (shipIndex == ShipRegistrar.FOUNDRY_PLUS_ID) {
-                Stat.ENERGY_BANK.percentVal(130.0F);
-                Stat.ENERGY_REGEN.percentVal(88.0F);
+                Stat.ENERGY_BANK.percentVal(180.0F);
+                Stat.ENERGY_REGEN.percentVal(100.0F);
                 Stat.STATION_SLOT.flatVal(6.0F);
                 Stat.PLATFORM_SLOT.flatVal(2.0F);
             }
