@@ -9,7 +9,9 @@ import mods.ModLogger;
 import java.lang.reflect.Field;
 
 public final class MarketRegistrar {
-    // Too lazy to make it work for tiers lol
+
+    // Too lazy to make it work for tiers of markets, may work on more later.
+    // IDs are handled currently by adding 100000 according to the ID function in one of the database scripts.
     public static final int ARROWHEAD_ITEM_ID = 100000 + ShipRegistrar.ARROWHEAD_ID;
     public static final int FOUNDRY_ITEM_ID = 100000 + ShipRegistrar.FOUNDRY_ID;
     public static final int FOUNDRY_PLUS_ITEM_ID = 100000 + ShipRegistrar.FOUNDRY_PLUS_ID;

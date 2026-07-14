@@ -9,11 +9,14 @@ import mods.ModLogger;
 
 public final class ShipRegistrar {
 
-    // Probably shouldn't go above 9999, but I am entirely unsure.
-    // Render Index should be above the built-in game ones, but it might max out.
-    // No idea if the game would even like having more than 1 ship in this file.
+    // Until dynamic IDs are a thing, check the vanilla ShipList to make sure you don't have any number conflicts.
+    // If another mod uses similar IDs, you will overwrite each other.
+    // Render Index is automatically made from ship_base_###, ensure your images follow same format.
+    // Render Index might have a limit, which the dev said they would up at some point to allow for more ship modding.
+
     public static final int ARROWHEAD_ID = 350;
     public static final int ARROWHEAD_RENDER_INDEX = 350;
+    //public static int ARROWHEAD_CUSTOM_LAYOUT_ID;
 
     public static final int FOUNDRY_ID = 40;
     public static final int FOUNDRY_PLUS_ID = 41;
@@ -27,29 +30,41 @@ public final class ShipRegistrar {
         if (registered) { return; }
         registered = true;
 
+        /*
+        // For reference on how to make a custom layout and position.
+        WeaponTurretPlacement arrowheadLayout = new WeaponTurretPlacement();
+
+        arrowheadLayout.addSlot(-66.0, 21.0);
+        arrowheadLayout.addSlot(66.0, 21.0);
+        arrowheadLayout.addSlot(-55.0, 16.0);
+        arrowheadLayout.addSlot(55.0, 16.0);
+        ARROWHEAD_CUSTOM_LAYOUT_ID = WeaponSlotLayoutList.layouts.add(arrowheadLayout);
+        */
+
+        // Uses default cargoMod from ShipList.
         float cargoMod = 0.75F;
         float integ = 200.0F;
         float carg = 75.0F * cargoMod;
 
         ShipList.write(
                 ARROWHEAD_ID,
-                30,
-                Color.AZURE,
-                "Arrowhead",
-                "A militarized shuttlecraft with a pointed frontend, maybe one day you could be a real arrow.",
-                0,
-                TypeTag.UNCOMMON,
-                ARROWHEAD_RENDER_INDEX,
-                37,              // Engine Position glow in pixels
-                integ * 1.50F,                   // Hull HP
-                carg * 1.10F,                    // Cargo
-                WeaponSlotLayoutList.S_2_V,      // Weapon Layout
-                2,                               // Energy slots
-                1,                               // Armor slots
-                1,                               // Shield slots
-                0,                               // Device slots
-                1,                               // Module slots
-                1                                // Engine slots
+                30,                        // Int: Icon, sets icon x and y size. Unsure if this means sprite size or what.
+                Color.AZURE,                    // Color: Color, unsure what exactly this affects.
+                "Arrowhead",                    // String: Display name
+                "Maybe one day you could be a real arrow.", // String: Display description
+                0,                              // Int: Tier, affects spawning and what level its usable at.
+                TypeTag.UNCOMMON,               // TypeTag, Affects spawning and loot drop, I think.
+                ARROWHEAD_RENDER_INDEX,         // Int: Render Index, I have made them variables for no real reason.
+                37,                             // Int: Engine Position glow in pixels
+                integ * 1.50F,                  // Float: Hull HP (integ * multiplier), somewhat based off ShipList style of doing it.
+                carg * 1.10F,                   // Float: Cargo (carg * multiplier), also based off ShipList style of doing it.
+                WeaponSlotLayoutList.S_2_V,     // WeaponSlotLayoutList: Weapon Layout, see WeaponSlotLayoutList for full list.
+                2,                              // Int: Energy slots, unsure what the UI limit for slots are but base game doesn't go above 8 currently.
+                1,                              // Int: Armor slots
+                1,                              // Int: Shield slots
+                0,                              // Int: Device slots
+                1,                              // Int: Module slots
+                1                               // Int: Engine slots
         );
 
         float integ2 = 200;
@@ -64,16 +79,16 @@ public final class ShipRegistrar {
                 4,
                 TypeTag.RARE,
                 FOUNDRY_RENDER_INDEX,
-                64,             // Engine Position glow in pixels
-                integ2 * 1.20F,                  // Hull HP
-                carg2 * 1.3F,                   // Cargo
-                WeaponSlotLayoutList.S_6_V,      // Weapon Layout
-                6,                               // Energy slots
-                5,                               // Armor slots
-                4,                               // Shield slots
-                2,                               // Device slots
-                5,                               // Module slots
-                4                                // Engine slots
+                64,
+                integ2 * 1.20F,
+                carg2 * 1.3F,
+                WeaponSlotLayoutList.S_6_V,
+                6,
+                5,
+                4,
+                2,
+                5,
+                4
         );
 
         ShipList.write(
@@ -85,16 +100,16 @@ public final class ShipRegistrar {
                 5,
                 TypeTag.EXOTIC,
                 FOUNDRY_RENDER_INDEX,
-                64,              // Engine Position glow in pixels
-                integ2 * 1.5F,                   // Hull HP
-                carg2 * 1.5F,                    // Cargo
-                WeaponSlotLayoutList.S_7_V,      // Weapon Layout
-                6,                               // Energy slots
-                6,                               // Armor slots
-                5,                               // Shield slots
-                3,                               // Device slots
-                6,                               // Module slots
-                5                                // Engine slots
+                64,
+                integ2 * 1.5F,
+                carg2 * 1.5F,
+                WeaponSlotLayoutList.S_7_V,
+                6,
+                6,
+                5,
+                3,
+                6,
+                5
         );
 
 

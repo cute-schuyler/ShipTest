@@ -18,7 +18,7 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
     )
     private void shiptest$registerShipRecipe(CallbackInfo ci) {
 
-        //For readability
+        // Uses market IDs of ships (100000 + ID), these are here for readability.
         int yachtItemId = 100001;
         int fabricatorItemId = 100029;
         int fabricatorplusItemId = 100039;
@@ -32,12 +32,12 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
         int FeMatx = 10711, AlMatx = 10712, TiMatx = 10713, WgMatx = 10714, VaMatx = 10715;
 
         this.addRecipe(
-                "T1:Arrowhead",
-                ARROWHEAD_ITEM_ID,
-                bpShipT0_1, 1,
-                yachtItemId, 1,
-                AgNode, 6,
-                FeMatx, 8
+                "T1:Arrowhead", // String: Label, no specific naming convention, copied what it looked like in CraftingTableNormal.
+                ARROWHEAD_ITEM_ID, // Int: Market ID of Ship
+                bpShipT0_1, 1, // Int: Blueprint ID, Int: Amount to use
+                yachtItemId, 1, // Int: Item A, Int: Amount to use
+                AgNode, 6, // Int: Item B, Int: Amount to use
+                FeMatx, 8 // Int: Item C, Int: Amount to use
         );
 
         this.addRecipe(

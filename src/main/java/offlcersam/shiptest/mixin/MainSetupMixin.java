@@ -19,7 +19,7 @@ public class MainSetupMixin {
                     shift = At.Shift.AFTER
             )
     )
-    private void modtest$registerShips(CallbackInfo ci) {
+    private void shiptest$registerShips(CallbackInfo ci) {
         ShipRegistrar.registerShips();
     }
 
@@ -31,7 +31,7 @@ public class MainSetupMixin {
                     shift = At.Shift.AFTER
             )
     )
-    private void modtest$registerMarkets(CallbackInfo ci) {
+    private void shiptest$registerMarkets(CallbackInfo ci) {
         MarketRegistrar.registerMarkets();
     }
 }

@@ -14,7 +14,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
         @Inject(method = "compile", at = @At("RETURN"))
         private static void modtest$applyShipBonuses(boolean isPlatform, int shipIndex, CallbackInfo ci) {
 
-            // Mimic the giant case switch in ShipList
+            // Mimic the giant case switch in ShipList that gives ship's bonuses
+            // The Switch Case goes up to 800 currently, might be able to add more cases with this unsure.
+
             if (shipIndex == ShipRegistrar.FOUNDRY_ID) {
                 Stat.ENERGY_BANK.percentVal(140.0F);
                 Stat.ENERGY_REGEN.percentVal(90.0F);

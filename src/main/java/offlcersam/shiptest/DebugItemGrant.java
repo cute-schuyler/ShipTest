@@ -7,6 +7,7 @@ import static offlcersam.shiptest.MarketRegistrar.*;
 
 public final class DebugItemGrant {
     // Set to true to automatically deposit the ship when loading your character
+    //Maybe make into config option if a config manager is made.
     private static final boolean ENABLE_DEBUG_GRANT = true;
     private static final String DEBUG_CHARACTER_NAME = "STEST";
 
