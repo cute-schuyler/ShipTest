@@ -1,30 +1,40 @@
 package offlcersam.shiptest;
 
 import illuminatus.core.graphics.Color;
+import items.ItemTypeConstantsInterface;
 import items.TypeTag;
 import items.lists.ShipList;
 import game.weapons.WeaponSlotLayoutList;
 import game.weapons.WeaponTurretPlacement;
 import mods.ModLogger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public final class ShipRegistrar {
-
-    // Until dynamic IDs are a thing, check the vanilla ShipList to make sure you don't have any number conflicts.
-    // If another mod uses similar IDs, you will overwrite each other.
-    // Render Index is automatically made from ship_base_###, ensure your images follow same format.
-    // Render Index might have a limit, which the dev said they would up at some point to allow for more ship modding.
-
-    public static final int ARROWHEAD_ID = 350;
-    public static final int ARROWHEAD_RENDER_INDEX = 350;
-    //public static int ARROWHEAD_CUSTOM_LAYOUT_ID;
-
-    public static final int FOUNDRY_ID = 40;
-    public static final int FOUNDRY_PLUS_ID = 41;
-    public static final int FOUNDRY_RENDER_INDEX = 349;
-
     private static boolean registered;
 
+    // Stores the base IDs of every weapon we add
+    private static final List<Integer> REGISTERED_SHIP_IDS = new ArrayList<>();
+
     private ShipRegistrar() { }
+
+    // Registers a ship ID and remembers it for later use.
+    private static int registerShipID(int id) {
+        REGISTERED_SHIP_IDS.add(id);
+        ModLogger.log("[ShipTest] Added ship ID to registry: " + id);
+        return id;
+    }
+
+    // Returns database ID for all ships.
+    public static int[] getShipDatabaseIDs() {
+        int[] ids = new int[REGISTERED_SHIP_IDS.size()];
+
+        for (int i = 0; i < REGISTERED_SHIP_IDS.size(); i++) {
+            ids[i] = ItemTypeConstantsInterface.SHIP * 10000 + REGISTERED_SHIP_IDS.get(i);
+        }
+        return ids;
+    }
 
     public static void registerShips() {
         if (registered) { return; }
@@ -47,14 +57,14 @@ public final class ShipRegistrar {
         float carg = 75.0F * cargoMod;
 
         ShipList.write(
-                ARROWHEAD_ID,
+                registerShipID(350),
                 30,                        // Int: Icon, sets icon x and y size. Unsure if this means sprite size or what.
                 Color.AZURE,                    // Color: Color, unsure what exactly this affects.
                 "Arrowhead",                    // String: Display name
                 "Maybe one day you could be a real arrow.", // String: Display description
                 0,                              // Int: Tier, affects spawning and what level its usable at.
                 TypeTag.UNCOMMON,               // TypeTag, Affects spawning and loot drop, I think.
-                ARROWHEAD_RENDER_INDEX,         // Int: Render Index, I have made them variables for no real reason.
+                350,         // Int: Render Index, I have made them variables for no real reason.
                 37,                             // Int: Engine Position glow in pixels
                 integ * 1.50F,                  // Float: Hull HP (integ * multiplier), somewhat based off ShipList style of doing it.
                 carg * 1.10F,                   // Float: Cargo (carg * multiplier), also based off ShipList style of doing it.
@@ -71,14 +81,14 @@ public final class ShipRegistrar {
         float carg2 = 350.0F * cargoMod * 2.0F;
 
         ShipList.write(
-                FOUNDRY_ID,
+                registerShipID(40),
                 158,
                 Color.WHITE,
                 "Foundry",
                 "Build an even bigger megastructure.",
                 4,
                 TypeTag.RARE,
-                FOUNDRY_RENDER_INDEX,
+                349,
                 64,
                 integ2 * 1.20F,
                 carg2 * 1.3F,
@@ -92,14 +102,14 @@ public final class ShipRegistrar {
         );
 
         ShipList.write(
-                FOUNDRY_PLUS_ID,
+                registerShipID(41),
                 216,
                 Color.PURPLE,
                 "Foundry+",
                 "Build an even bigger megastructure+.",
                 5,
                 TypeTag.EXOTIC,
-                FOUNDRY_RENDER_INDEX,
+                349,
                 64,
                 integ2 * 1.5F,
                 carg2 * 1.5F,
@@ -114,8 +124,6 @@ public final class ShipRegistrar {
 
 
         ShipList.loadShipStatsFromItems(_database.ItemDatabase.itemDataFile);
-        ModLogger.log("[ShipTest] Registered ship: Arrowhead with ID of: " + ARROWHEAD_ID);
-        ModLogger.log("[ShipTest] Registered ship: Foundry with ID of: " + FOUNDRY_ID);
-        ModLogger.log("[ShipTest] Registered ship: Foundry with ID of: " + FOUNDRY_PLUS_ID);
+        ModLogger.log("[ShipTest] Registered " + REGISTERED_SHIP_IDS.size() + " ships");
     }
 }

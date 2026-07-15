@@ -5,22 +5,11 @@ import game.markets.MarketDatabase;
 import game.markets.MarketItem;
 import items.Item;
 import illuminatus.core.datastructures.List;
+import items.ItemTypeConstantsInterface;
 import mods.ModLogger;
 import java.lang.reflect.Field;
 
 public final class MarketRegistrar {
-
-    // Too lazy to make it work for tiers of markets, may work on more later.
-    // IDs are handled currently by adding 100000 according to the ID function in one of the database scripts.
-    public static final int ARROWHEAD_ITEM_ID = 100000 + ShipRegistrar.ARROWHEAD_ID;
-    public static final int FOUNDRY_ITEM_ID = 100000 + ShipRegistrar.FOUNDRY_ID;
-    public static final int FOUNDRY_PLUS_ITEM_ID = 100000 + ShipRegistrar.FOUNDRY_PLUS_ID;
-    private static final int[] SHIP_ITEM_IDS = {
-            ARROWHEAD_ITEM_ID,
-            FOUNDRY_ITEM_ID,
-            FOUNDRY_PLUS_ITEM_ID
-    };
-
 
     private static boolean registered;
 
@@ -31,23 +20,36 @@ public final class MarketRegistrar {
         registered = true;
 
         int updatedMarkets = 0;
+        int addedShips = 0;
+        int[] ships = ShipRegistrar.getShipDatabaseIDs();
+
         List<Market> markets = getMarkets();
 
         if (markets != null) {
             for (int marketIndex = 0; marketIndex < markets.size(); marketIndex++) {
-                Market market = markets.getChecked(marketIndex);
-                if (market == null) { continue; }
 
+                Market market = markets.getChecked(marketIndex);
+
+                if (market == null) {
+                    continue;
+                }
+
+                // Check MarketList for addStationIndices
                 if (market.stationMatches(501) || market.stationMatches(511)) {
-                    for (int itemId : SHIP_ITEM_IDS) {
+
+                    for (int shipID : ships) {
+
                         MarketItem listing = new MarketItem(
-                                itemId,
+                                shipID,
                                 MarketItem.BUY_AND_SELL_ALWAYS
                         );
+
                         if (listing.item != null) {
                             Item.markAsMarketItem(listing.item);
                         }
+
                         market.addChecked(listing);
+                        addedShips++;
                     }
 
                     MarketDatabase.setMarket(marketIndex, market);
@@ -55,7 +57,14 @@ public final class MarketRegistrar {
                 }
             }
         }
-        ModLogger.log("[ShipTest] Added " + SHIP_ITEM_IDS.length + " custom ship listings to " + updatedMarkets + " markets");
+
+        ModLogger.log(
+                "[ShipTest] Added "
+                        + addedShips
+                        + " custom ship listings to "
+                        + updatedMarkets
+                        + " markets"
+        );
     }
 
     @SuppressWarnings("unchecked")

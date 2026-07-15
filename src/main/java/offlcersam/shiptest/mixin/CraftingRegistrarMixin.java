@@ -2,12 +2,11 @@ package offlcersam.shiptest.mixin;
 
 import crafting.CraftingTable;
 import crafting.CraftingTableNormal;
+import mods.ModLogger;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import static offlcersam.shiptest.MarketRegistrar.*;
 
 @Mixin(value = CraftingTableNormal.class, remap = false)
 public abstract class CraftingRegistrarMixin extends CraftingTable {
@@ -17,6 +16,11 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
             at = @At("TAIL")
     )
     private void shiptest$registerShipRecipe(CallbackInfo ci) {
+
+        // Readability, ShipIDs are essentially BaseID + 10000
+        int ARROWHEAD_ID = 100350;
+        int FOUNDRY_ITEM_ID = 100040;
+        int FOUNDRY_PLUS_ITEM_ID = 100041;
 
         // Uses market IDs of ships (100000 + ID), these are here for readability.
         int yachtItemId = 100001;
@@ -33,7 +37,7 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
 
         this.addRecipe(
                 "T1:Arrowhead", // String: Label, no specific naming convention, copied what it looked like in CraftingTableNormal.
-                ARROWHEAD_ITEM_ID, // Int: Market ID of Ship
+                ARROWHEAD_ID, // Int: Market ID of Ship
                 bpShipT0_1, 1, // Int: Blueprint ID, Int: Amount to use
                 yachtItemId, 1, // Int: Item A, Int: Amount to use
                 AgNode, 6, // Int: Item B, Int: Amount to use
@@ -66,6 +70,7 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
                 PtNode, 10,
                 WgMatx, 30
         );
+
         this.addRecipe(
                 "T5:FoundryPlus+Alt1",
                 FOUNDRY_PLUS_ITEM_ID,
@@ -75,6 +80,6 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
                 WgMatx, 50
         );
 
-        System.out.println("[Shiptest] Arrowhead recipe added.");
+        ModLogger.log("[ShipTest] Ship recipes added.");
     }
 }

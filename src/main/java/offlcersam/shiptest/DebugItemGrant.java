@@ -31,9 +31,12 @@ public final class DebugItemGrant {
             return;
         }
         */
-        Player.ship.cargo.add(ARROWHEAD_ITEM_ID, 1);
-        Player.ship.cargo.add(FOUNDRY_ITEM_ID, 1);
-        Player.ship.cargo.add(FOUNDRY_PLUS_ITEM_ID, 1);
-        ModLogger.log("[ShipTest] Granted Ships to STEST cargo hold successfully.");
+        int[] ships = ShipRegistrar.getShipDatabaseIDs();
+        for (int shipID : ships) {Player.ship.cargo.add(shipID, 1);}
+        ModLogger.log(
+                "[ShipTest] Granted "
+                        + ships.length
+                        + " ships to STEST cargo hold successfully."
+        );
     }
 }
