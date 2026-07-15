@@ -33,10 +33,6 @@ public final class DebugItemGrant {
         */
         int[] ships = ShipRegistrar.getShipDatabaseIDs();
         for (int shipID : ships) {Player.ship.cargo.add(shipID, 1);}
-        ModLogger.log(
-                "[ShipTest] Granted "
-                        + ships.length
-                        + " ships to STEST cargo hold successfully."
-        );
+        ModLogger.log("[ShipTest] Granted " + ships.length + " ships to STEST cargo hold successfully.");
     }
 }

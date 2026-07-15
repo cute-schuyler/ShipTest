@@ -27,18 +27,13 @@ public final class MarketRegistrar {
 
         if (markets != null) {
             for (int marketIndex = 0; marketIndex < markets.size(); marketIndex++) {
-
                 Market market = markets.getChecked(marketIndex);
-
-                if (market == null) {
-                    continue;
-                }
+                if (market == null) {continue;}
 
                 // Check MarketList for addStationIndices
                 if (market.stationMatches(501) || market.stationMatches(511)) {
 
                     for (int shipID : ships) {
-
                         MarketItem listing = new MarketItem(
                                 shipID,
                                 MarketItem.BUY_AND_SELL_ALWAYS
