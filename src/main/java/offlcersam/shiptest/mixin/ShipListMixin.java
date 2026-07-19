@@ -17,14 +17,26 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
             // The Switch Case goes up to 800 currently, might be able to add more cases with this unsure.
             // Uses BaseID of ship
 
-            if (shipIndex == 40) {
-                Stat.ENERGY_BANK.percentVal(140.0F);
-                Stat.ENERGY_REGEN.percentVal(90.0F);
-                Stat.STATION_SLOT.flatVal(5.0F);
-                Stat.PLATFORM_SLOT.flatVal(1.0F);
+            if (shipIndex == 250) {
+                Stat.ENERGY_REGEN.percentVal(50.0F);
+                Stat.ARMOR_BANK.percentVal(140.0F);
+                Stat.ARMOR_REGEN.percentVal(90.0F);
+                Stat.PLATFORM_SLOT.flatVal(2.0F);
             }
 
-            if (shipIndex == 41) {
+            if (shipIndex == 251) {
+                Stat.ENERGY_BANK.percentVal(200.0F);
+                Stat.ENERGY_REGEN.percentVal(200.0F);
+            }
+            
+            if (shipIndex == 252) {
+                Stat.ENERGY_REGEN.percentVal(90.0F);
+                Stat.ARMOR_BANK.percentVal(180.0F);
+                Stat.ARMOR_REGEN.percentVal(130.0F);
+                Stat.PLATFORM_SLOT.flatVal(5.0F);
+            }
+            
+            if (shipIndex == 253) {
                 Stat.ENERGY_BANK.percentVal(180.0F);
                 Stat.ENERGY_REGEN.percentVal(100.0F);
                 Stat.STATION_SLOT.flatVal(6.0F);
