@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "id": "offlcersam_shiptest",
-  "version": "1.1.5",
-  "name": "ShipTest",
-  "description": "Sector Space Ship mod.",
+  "id": "schuyler_ships",
+  "version": "1.0.0",
+  "name": "ShipsOfGarmillas",
+  "description": "Sector Space Ship mod adding Garmillas Ships.",
   "environment": "*",
 
   "mixins": [
-    "shiptest.mixins.json"
+    "garmillas.mixins.json"
   ],
 
   "depends": {
