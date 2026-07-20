@@ -1,4 +1,4 @@
-package offlcersam.shiptest;
+package garmillas;
 
 import illuminatus.core.graphics.Color;
 import items.ItemTypeConstantsInterface;
