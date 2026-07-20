@@ -81,5 +81,24 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
                     Stat.HULL_REPAIR.flatVal(6.0F);
                     Stat.WEAPON_DAMAGE.flatVal(15.0F);
                 }
+                if (shipIndex == 559) {
+                    Stat.ARMOR_INTEG.percentVal(60.0F);
+                    Stat.SHIELD_BANK.percentVal(60.0F);
+                    Stat.SHIELD_SOAK.flatVal(20.0F);
+                    Stat.ARMOR_SOAK.flatVal(20.0F);
+                    Stat.WEAPON_ACCURACY.percentVal(30.0F);
+                    Stat.WEAPON_DAMAGE.flatVal(60.0F);
+                    Stat.WEAPON_RANGE.flatVal(50.0F);
+                }
+
+
+
+
+
+
+
+
+
+            
             
 }}
