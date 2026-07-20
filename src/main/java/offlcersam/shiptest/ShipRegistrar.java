@@ -40,22 +40,6 @@ public final class ShipRegistrar {
         if (registered) { return; }
         registered = true;
 
-        /*
-        // For reference on how to make a custom layout and position.
-        WeaponTurretPlacement arrowheadLayout = new WeaponTurretPlacement();
-
-        arrowheadLayout.addSlot(-66.0, 21.0);
-        arrowheadLayout.addSlot(66.0, 21.0);
-        arrowheadLayout.addSlot(-55.0, 16.0);
-        arrowheadLayout.addSlot(55.0, 16.0);
-        ARROWHEAD_CUSTOM_LAYOUT_ID = WeaponSlotLayoutList.layouts.add(arrowheadLayout);
-        */
-
-        // Uses default cargoMod from ShipList.
-        float cargoMod = 0.75F;
-        float integ = 200.0F;
-        float carg = 75.0F * cargoMod;
-
         //ShipList.write(
         //        registerShipID(350),
         //        30,                         Int: Icon, sets Icon according to sprite sheet.
@@ -73,201 +57,27 @@ public final class ShipRegistrar {
         //        1,                               Int: Armor slots
         //        1,                               Int: Shield slots
         //        0,                              Int: Device slots
-        //      1,                              Int: Module slots
-        //       1                                Int: Engine slots
+        //        1,                              Int: Module slots
+        //        1                                Int: Engine slots
         //);
 
-        float integ2 = 200;
-        float carg2 = 350.0F * cargoMod * 2.0F;
+        ShipList.write(registerShipID(550),158,Color.WHITE,"Caterpillar","Heavily Armored Transport.",2,TypeTag.UNCOMMON,850,190,200.0F,100.0F,WeaponSlotLayoutList.S_1_V,4,6,2,1,3,2);
 
-        ShipList.write(
-                registerShipID(250),
-                158,
-                Color.WHITE,
-                "Caterpillar",
-                "Heavily Armored Transport.",
-                2,
-                TypeTag.UNCOMMON,
-                850,
-                190,
-                integ2 * 1.50F,
-                carg2 * 1.5F,
-                WeaponSlotLayoutList.S_1_V,
-                4,
-                6,
-                2,
-                1,
-                3,
-                2
-        );
+        ShipList.write(registerShipID(551),158,Color.WHITE,"Container","For your long range transport needs.",2,TypeTag.UNCOMMON,851,218,150.0F,180.0F, WeaponSlotLayoutList.S_2_V, 6, 2, 2, 1, 3, 5 );
 
-        ShipList.write(
-                registerShipID(251),
-                158,
-                Color.WHITE,
-                "Container",
-                "For your long range transport needs.",
-                2,
-                TypeTag.UNCOMMON,
-                851,
-                218,
-                integ2 * 1.1F,
-                carg2 * 1.8F,
-                WeaponSlotLayoutList.S_2_V,
-                6,
-                2,
-                2,
-                1,
-                3,
-                5
-        );
+        ShipList.write( registerShipID(552),158,Color.WHITE,"Carrier HE","Heavily Armored Transport+.",4,TypeTag.RARE,852,480,240.0F,200.0F,WeaponSlotLayoutList.S_5_V,6,8,3,2,3,4);
+        
+        ShipList.write(registerShipID(553),216,Color.WHITE,"Delameya","Assault Gunship.",4,TypeTag.RARE,853,340,180.0F,50.0F,WeaponSlotLayoutList.S_6_V,5,4,4,4,4,2);
 
-                ShipList.write(
-                registerShipID(252),
-                158,
-                Color.WHITE,
-                "Carrier HE",
-                "Heavily Armored Transport+.",
-                4,
-                TypeTag.RARE,
-                852,
-                480,
-                integ2 * 1.8F,
-                carg2 * 1.8F,
-                WeaponSlotLayoutList.S_5_V,
-                6,
-                8,
-                3,
-                2,
-                3,
-                4
-        );
+        ShipList.write(registerShipID(554),30,Color.WHITE,"Gemini","Twin Destroyer.",1,TypeTag.COMMON,854,54,160.0F,50.0F,WeaponSlotLayoutList.S_4_V,3,2,2,2,2,2);
 
-                ShipList.write(
-                registerShipID(253),
-                216,
-                Color.WHITE,
-                "Delameya",
-                "Assault Gunship.",
-                4,
-                TypeTag.RARE,
-                853,
-                340,
-                integ2 * 1.8F,
-                carg2 * 1.8F,
-                WeaponSlotLayoutList.S_6_V,
-                5,
-                4,
-                4,
-                4,
-                4,
-                2
-        );
+        ShipList.write(registerShipID(555),216,Color.WHITE,"Barrier","A rarely seen Minelayer.",5,TypeTag.EXOTIC,855,310,300.0F,300.0F,WeaponSlotLayoutList.S_4_V,7,3,3,6,6,4);
+        
+        ShipList.write(registerShipID(556),30,Color.WHITE,"Xport","Light Military Hauler.",1,TypeTag.COMMON,856,340,160.0F,160.0F,WeaponSlotLayoutList.S_3_V,2,2,2,0,2,2);
+        
+        ShipList.write(registerShipID(557),158,Color.WHITE,"Dominator","Common Empire Destroyer.",1,TypeTag.COMMON,857,424,200.0F,75.0F,WeaponSlotLayoutList.S_3_V,3,2,2,1,1,3);
 
-                ShipList.write(
-                registerShipID(254),
-                30,
-                Color.WHITE,
-                "Gemini",
-                "Twin Destroyer.",
-                1,
-                TypeTag.COMMON,
-                854,
-                54,
-                integ * 1.6F,
-                carg * 1.1F,
-                WeaponSlotLayoutList.S_4_V,
-                3,
-                2,
-                2,
-                2,
-                2,
-                2
-        );
-
-                ShipList.write(
-                registerShipID(255),
-                216,
-                Color.WHITE,
-                "Barrier",
-                "A rarely seen Minelayer.",
-                5,
-                TypeTag.EXOTIC,
-                855,
-                310,
-                integ2 * 2.0F,
-                carg2 * 3.0F,
-                WeaponSlotLayoutList.S_4_V,
-                7,
-                3,
-                3,
-                6,
-                6,
-                4
-        );
-
-                ShipList.write(
-                registerShipID(256),
-                30,
-                Color.WHITE,
-                "Xport",
-                "Light Military Hauler.",
-                1,
-                TypeTag.COMMON,
-                856,
-                340,
-                integ * 1.2F,
-                carg * 1.6F,
-                WeaponSlotLayoutList.S_3_V,
-                2,
-                2,
-                2,
-                0,
-                2,
-                2
-        );
-
-                ShipList.write(
-                registerShipID(257),
-                158,
-                Color.WHITE,
-                "Dominator",
-                "Common Empire Destroyer.",
-                1,
-                TypeTag.COMMON,
-                857,
-                424,
-                integ2 * 1.5F,
-                carg2 * 1.5F,
-                WeaponSlotLayoutList.S_3_V,
-                3,
-                2,
-                2,
-                1,
-                1,
-                3
-        );
-
-                ShipList.write(
-                registerShipID(258),
-                158,
-                Color.WHITE,
-                "Exterminator",
-                "Heavy Empire Destroyer.",
-                2,
-                TypeTag.UNCOMMON,
-                858,
-                395,
-                integ2 * 2.0F,
-                carg2 * 1.6F,
-                WeaponSlotLayoutList.S_5_V,
-                4,
-                3,
-                3,
-                2,
-                2,
-                4
-        );
+        ShipList.write(registerShipID(558),158,Color.WHITE,"Exterminator","Heavy Empire Destroyer.",2,TypeTag.UNCOMMON,858,395,240.0F,75.0F,WeaponSlotLayoutList.S_5_V,4,3,3,2,2,4);
 
 
 
