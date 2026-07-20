@@ -84,7 +84,7 @@ public final class ShipRegistrar {
                        558,395,240.0F,75.0F,
                        WeaponSlotLayoutList.S_5_V,4,3,3,2,2,4);
 
-        ShipList.write(registerShipID(558),158,Color.WHITE,"Gaiderol","One of the mainline Battleships of the Empire.",
+        ShipList.write(registerShipID(559),158,Color.WHITE,"Gaiderol","One of the mainline Battleships of the Empire.",
                        7,TypeTag.EXOTIC,
                        559,1130,1200.0F,300.0F,
                        WeaponSlotLayoutList.S_10_V,9,10,8,6,8,4);
