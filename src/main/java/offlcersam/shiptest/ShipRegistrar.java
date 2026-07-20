@@ -51,7 +51,7 @@ public final class ShipRegistrar {
 
         ShipList.write( registerShipID(552),158,Color.WHITE,"Carrier HE","Heavily Armored Transport+.",
                        4,TypeTag.RARE,        
-                       552,480,240.0F,200.0F,    
+                       552,480,240.0F,300.0F,    
                        WeaponSlotLayoutList.S_5_V,6,8,3,2,3,4);
         
         ShipList.write(registerShipID(553),216,Color.WHITE,"Delameya","Assault Gunship.",
