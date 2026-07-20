@@ -70,7 +70,7 @@ public final class ShipRegistrar {
                        WeaponSlotLayoutList.S_4_V,7,3,3,6,6,4);
         
         ShipList.write(registerShipID(556),30,Color.WHITE,"Xport","Light Military Hauler.",
-                       1,TypeTag.COMMON,
+                       0,TypeTag.COMMON,
                        556,340,160.0F,160.0F,
                        WeaponSlotLayoutList.S_3_V,2,2,2,0,2,2);
         
