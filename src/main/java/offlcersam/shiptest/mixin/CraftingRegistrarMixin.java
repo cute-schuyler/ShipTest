@@ -43,6 +43,25 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
         int CuNode = 10701, AgNode = 10702, AuNode = 10703, PtNode = 10704, OsNode = 10705;
         int FeMatx = 10711, AlMatx = 10712, TiMatx = 10713, WgMatx = 10714, VaMatx = 10715;
 
+//                          104 145 163 163 154 145 162  114 151 166 145 163 054  107 154 157 162 171  104 145 163 163 154 145 162
+//
+//                                                                                                                          :                           
+//          ,;                 ,;           L.                                                                             t#,                          
+//        f#i                f#i j.         EW:        ,ft                          i                  .Gt            i   ;##W.   j.                    
+//      .E#t  GEEEEEEEL    .E#t  EW,        E##;       t#E            ..           LE                 j#W:           LE  :#L:WE   EW,        f.     ;WE.
+//     i#W,   ,;;L#K;;.   i#W,   E##j       E###t      t#E           ;W,          L#E               ;K#f            L#E .KG  ,#D  E##j       E#,   i#G  
+//    L#D.       t#E     L#D.    E###D.     E#fE#f     t#E          j##,         G#W.             .G#D.            G#W. EE    ;#f E###D.     E#t  f#f   
+//  :K#Wfff;     t#E   :K#Wfff;  E#jG#W;    E#t D#G    t#E         G###,        D#K.             j#K;             D#K. f#.     t#iE#jG#W;    E#t G#i    
+//  i##WLLLLt    t#E   i##WLLLLt E#t t##f   E#t  f#E.  t#E       :E####,       E#K.            ,K#f   ,GD;       E#K.  :#G     GK E#t t##f   E#jEW,     
+//   .E#L        t#E    .E#L     E#t  :K#E: E#t   t#K: t#E      ;W#DG##,     .E#E.              j#Wi   E#t     .E#E.    ;#L   LW. E#t  :K#E: E##E.      
+//     f#E:      t#E      f#E:   E#KDDDD###iE#t    ;#W,t#E     j###DW##,    .K#E                 .G#D: E#t    .K#E       t#f f#:  E#KDDDD###iE#G        
+//      ,WW;     t#E       ,WW;  E#f,t#Wi,,,E#t     :K#D#E    G##i,,G##,   .K#D                    ,K#fK#t   .K#D         f#D#;   E#f,t#Wi,,,E#t        
+//       .D#;    t#E        .D#; E#t  ;#W:  E#t      .E##E  :K#K:   L##,  .W#G                       j###t  .W#G           G#t    E#t  ;#W:  E#t        
+//         tt     fE          tt DWi   ,KK: ..         G#E ;##D.    L##, :W##########Wt               .G#t :W##########Wt   t     DWi   ,KK: EE.        
+//                 :                                    fE ,,,      .,,  :,,,,,,,,,,,,,.                ;; :,,,,,,,,,,,,,.                   t          
+//                                                       ,                                                                                              
+//
+        
         this.addRecipe(
                 "T1:Gemini",
                 GEMINI_GE,
