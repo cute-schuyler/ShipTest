@@ -93,6 +93,6 @@ public final class ShipRegistrar {
 
 
         ShipList.loadShipStatsFromItems(_database.ItemDatabase.itemDataFile);
-        ModLogger.log("[ShipTest] Registered " + REGISTERED_SHIP_IDS.size() + " ships");
+        ModLogger.log("[Gam] Registered " + REGISTERED_SHIP_IDS.size() + " ships");
     }
 }
