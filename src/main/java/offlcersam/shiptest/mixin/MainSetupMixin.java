@@ -1,4 +1,4 @@
-package offlcersam.shiptest.mixin;
+package garmillas.mixin;
 
 import offlcersam.shiptest.MarketRegistrar;
 import offlcersam.shiptest.ShipRegistrar;
