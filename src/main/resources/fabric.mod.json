@@ -1,15 +1,13 @@
 {
   "schemaVersion": 1,
-  "id": "schuyler_ships",
-  "version": "1.0.0",
-  "name": "ShipsOfGarmillas",
-  "description": "Sector Space Ship mod adding Garmillas Ships.",
+  "id": "garmillan_empire_ships",
+  "version": "1.0",
+  "name": "Greater Garmillan Empire Ships",
+  "description": "Introduces several ships featured in the Battleship Yamato Anime's.",
   "environment": "*",
-
   "mixins": [
     "garmillas.mixins.json"
   ],
-
   "depends": {
     "fabricloader": ">=0.18.4",
     "java": ">=25"
