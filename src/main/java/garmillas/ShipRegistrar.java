@@ -17,7 +17,7 @@ public final class ShipRegistrar {
     private ShipRegistrar() { }
     private static int registerShipID(int id) {
         REGISTERED_SHIP_IDS.add(id);
-        ModLogger.log("[ShipTest] Added ship ID to registry: " + id);
+        ModLogger.log("[Gam] Added ship ID to registry: " + id);
         return id;
     }
  public static int[] getShipDatabaseIDs() {
