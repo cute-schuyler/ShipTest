@@ -27,6 +27,7 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
         int XPORT_GE = 100556;
         int DOMINATOR_GE = 100557;
         int EXTERMINATOR_GE = 100558;
+        int GAIDEROL_GE = 100559;
 
         // Uses market IDs of ships (100000 + ID), these are here for readability.
         int skiffItemId = 100000;
@@ -48,7 +49,7 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
                 bpShipT0_1, 1,
                 skiffItemId, 1,
                 CuNode, 10,
-                FeMatx, 10
+                FeMatx, 20
         );
 
         this.addRecipe(
@@ -57,7 +58,7 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
                 bpShipT0_1, 1,
                 skiffItemId, 1,
                 CuNode, 5,
-                FeMatx, 5
+                FeMatx, 10
         );
 
         this.addRecipe(
@@ -66,7 +67,7 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
                 bpShipT0_1, 1,
                 skiffItemId, 1,
                 CuNode, 10,
-                FeMatx, 10
+                FeMatx, 20
         );
 
         this.addRecipe(
@@ -75,7 +76,7 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
                 bpShipT0_1, 1,
                 XPORT_GE, 1,
                 CuNode, 5,
-                FeMatx, 5
+                FeMatx, 10
         );
 
         this.addRecipe(
@@ -84,7 +85,7 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
                 bpShipT2, 1,
                 DOMINATOR_GE, 1,
                 AgNode, 20,
-                AlMatx, 20
+                AlMatx, 40
         );
 
         this.addRecipe(
@@ -93,7 +94,7 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
                 bpShipT2, 1,
                 GEMINI_GE, 2,
                 AgNode, 10,
-                AlMatx, 10
+                AlMatx, 20
         );
 
         this.addRecipe(
@@ -102,7 +103,7 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
                 bpShipT2, 1,
                 XPORT_GE, 1,
                 AgNode, 20,
-                AlMatx, 20
+                AlMatx, 40
         );
 
         this.addRecipe(
@@ -111,7 +112,7 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
                 bpShipT2, 1,
                 XPORT_GE, 2,
                 AgNode, 20,
-                AlMatx, 20
+                AlMatx, 40
         );
 
         this.addRecipe(
@@ -121,7 +122,7 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
                 CATERPILLAR_GE, 1,
                 CONTAINER_GE, 1,
                 AuNode, 20,
-                TiMatx, 20
+                TiMatx, 40
         );
 
         this.addRecipe(
@@ -130,7 +131,7 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
                 bpShipT4_5, 1,
                 EXTERMINATOR_GE, 1,
                 AuNode, 20,
-                TiMatx, 20
+                TiMatx, 40
         );
 
         this.addRecipe(
@@ -140,12 +141,29 @@ public abstract class CraftingRegistrarMixin extends CraftingTable {
                 EXTERMINATOR_GE, 1,
                 CATERPILLAR_GE, 1,
                 AuNode, 40,
-                TiMatx, 40
+                TiMatx, 80
         );
 
+        this.addRecipe(
+                "T7:Gaiderol",
+                GAIDEROL_GE,
+                bpShipT4_5, 1,
+                DELAMEYA_GE, 1,
+                BARRIER_GE, 1,
+                PtNode, 45,
+                WgMatx, 90
+        );
 
-
-
+        this.addRecipe(
+                "T7:Gaiderol+Alt1",
+                GAIDEROL_GE,
+                bpShipT4_5, 1,
+                XPORT_GE, 2,
+                DOMINATOR_GE, 1,
+                EXTERMINATOR_GE, 1,
+                enrFLD, 30,
+                WgMatx, 60
+        );
 
 
 
